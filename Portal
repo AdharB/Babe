@@ -1,0 +1,74 @@
+<div >
+  {% if customer %}
+  <div class="frame_container">
+  	<iframe src="https://big-static.com/babethings_shopify_app/public/dealer-portal?id={{customer.id }}" frameborder="0" width="100%" class="dealer-portal-iframe"   id="dealer-portal-iframe"></iframe>
+  </div>
+  {% else %}
+  	<br>
+    <div class="dealer-portal-login page--account">
+      
+      
+      <div class="customer--root cm-login-signin">
+
+		  <div id="customer-login" class="customer--login">
+            
+		    <div class="cm-login-overlay-img"><img src="https://cdn.shopify.com/s/files/1/2547/4568/files/Leaf_eeca3800-fb36-45b9-98fd-c47857299bc8.png?v=1614106741" alt="" /></div>
+		   
+     
+            
+            <p id="account-reset" class="account--reset font--paragraph">
+		      {{ 'customer.login.reset_instructions' | t }}
+		    </p>
+            	
+            <h1 class="page-title font--section-heading">
+			HEY GORGEOUS,
+          <span class="page-subtitle">log-in</span>
+		</h1>
+            
+            <div class="still-not-access">If you still do not have access to the dealer portal, reach out to <a href="mailto:info@babehairextensions.com">info@babehairextensions.com</a></div>
+      
+            
+		    {% form 'customer_login' %}
+		      <input type="hidden" id="checkout_url" name="checkout_url" value="/pages/dealer-portal" />
+
+		      <div class="input-area">
+                <label>Email*</label>
+            <input type="email" placeholder="{{ 'customer.login.email' | t }}" value="" name="customer[email]" id="customer_email" class="text" required />
+            </div>
+            <div class="input-area">
+              <label>Password*</label>
+		      <input type="password" placeholder="{{ 'customer.login.password' | t }}" value="" name="customer[password]" id="customer_password" class="text" size="16" required />
+            </div>
+
+	        <div class="button-login-sign-in">
+		        <div class="account--forgot-password font--block-link">
+                  <span>* Fields Required</span>
+		          <a href="/account/login?action=forgot-password" >
+		            {{ 'customer.login.forgot_password' | t }}
+		          </a>
+		        </div>
+		      
+
+		      <div class="account--button-container">
+		        <button class="font--button account--sign-in learnmore"
+		              type="submit"
+                        value="{{ 'customer.login.sign_in' | t }}">Login</button>
+		        
+		      </div>
+		    </div>
+		    {% endform %}
+		  </div>
+  	  </div>
+      
+  	</div>
+  <div class="clearfix"></div>
+  <div class="text-center dealer-video-iframe embed-responsive embed-responsive-16by9">
+	<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/8BMkE2qkWS4?rel=0&amp;enablejsapi=1&hd=1" allowfullscreen></iframe>
+   </div>
+  
+  <div>&nbsp;</div>
+  <div>&nbsp;</div>
+   <div class="clearfix">&nbsp;</div>
+  {% endif %}
+  
+</div>
